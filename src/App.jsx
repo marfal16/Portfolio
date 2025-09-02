@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -7,9 +7,11 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+
 const App = () => {
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans leading-normal tracking-wider">
+    <div className="bg-white text-gray-800 font-sans leading-normal tracking-wider">
+
       <Navbar />
       <main className="pt-[80px]">
         <Home />
