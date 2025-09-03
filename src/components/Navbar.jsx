@@ -35,57 +35,65 @@ const Navbar = () => {
   );
 
   return (
-    <nav
-      className={`fixed w-full h-[80px] flex justify-center items-center px-4 z-50 transition-all duration-300
-        ${scrolled
-          ? "bg-white shadow-md"
-          : "bg-white/30 backdrop-blur-md border-b border-orange-100 shadow-sm"
-        }`}
-    >
-      <div className="max-w-5xl w-full flex justify-between items-center">
-        <h1 className="text-2xl md:text-3xl font-bold text-orange-600">Maria Falanga</h1>
+<nav
+  className={`fixed w-full h-[80px] flex justify-center items-center px-4 z-50 transition-all duration-300
+    ${scrolled
+      ? "bg-blue-900/80 shadow-md"
+      : "bg-blue-950/20 backdrop-blur-sm"
+    }`}
+>
+  <div className="max-w-5xl w-full flex justify-between items-center font-roboto">
+    <h1 className={`text-2xl md:text-3xl font-roboto transition-colors duration-300 ${
+      scrolled ? "text-white" : "text-blue-950"
+    }`}>
+      Maria Falanga
+    </h1>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex space-x-6 text-lg font-medium">
+    {/* Desktop links */}
+    <ul className="hidden md:flex space-x-6 text-lg font-medium">
+      {links.map((link, i) => (
+        <li key={i}>
+          <a
+            href={link.href}
+            className={`transition-colors duration-300 ${
+              scrolled ? "text-white hover:text-orange-400" : "text-blue-950 hover:text-orange-400"
+            }`}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+
+    {/* Hamburger */}
+    <div onClick={handleClick} className="md:hidden z-10 cursor-pointer text-white">
+      {!nav ? hamburgerIcon : closeIcon}
+    </div>
+
+    {/* Mobile menu */}
+    <AnimatePresence>
+      {nav && (
+        <motion.ul
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.3 }}
+          className="absolute top-0 left-0 w-full h-screen bg-blue-950 flex flex-col justify-center items-center space-y-6 text-4xl"
+        >
           {links.map((link, i) => (
-            <li key={i}>
-              <a
-                href={link.href}
-                className="hover:text-orange-600 transition duration-300 ease-in-out"
-              >
+            <li key={i} className="py-6 text-4xl">
+              <a onClick={handleClick} href={link.href} className="hover:text-orange-400 transition">
                 {link.name}
               </a>
             </li>
           ))}
-        </ul>
+        </motion.ul>
+      )}
+    </AnimatePresence>
+  </div>
+</nav>
 
-        {/* Hamburger */}
-        <div onClick={handleClick} className="md:hidden z-10 cursor-pointer text-2xl">
-          {!nav ? hamburgerIcon : closeIcon}
-        </div>
-
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {nav && (
-            <motion.ul
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center space-y-6 text-4xl"
-            >
-              {links.map((link, i) => (
-                <li key={i} className="py-6 text-4xl">
-                  <a onClick={handleClick} href={link.href} className="hover:text-orange-600 transition">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
-      </div>
-    </nav>
   );
 };
 

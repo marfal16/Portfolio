@@ -9,7 +9,7 @@ const contacts = [
 
 const Contact = () => {
   return (
-    <div id="contact" className="min-h-screen flex flex-col items-center justify-center py-12 px-4">
+    <div id="contact" className="scroll-mt-24 min-h-screen flex flex-col items-center justify-center py-12 px-4">
       <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-8 text-center">
         Contatti
       </h2>

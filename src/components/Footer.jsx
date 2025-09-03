@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-6 bg-gray-800 text-white">
       <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>© 2024 Maria Falanga. All rights reserved.</p>
+        <p>© 2025 Maria Falanga. All rights reserved.</p>
         <div className="flex gap-4">
           <a href="mailto:mariafalanga00@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition">
             <FaEnvelope size={20} />

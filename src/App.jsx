@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="bg-white text-gray-800 font-sans leading-normal tracking-wider">
+    <div className=" text-white text-gray-800 font-sans leading-normal tracking-wider">
 
       <Navbar />
       <main className="pt-[80px]">

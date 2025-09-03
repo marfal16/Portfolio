@@ -54,12 +54,20 @@ const AnimatedAvatar = ({ url }) => {
         newX = 3.5;
         newYpos = -2.6;
         newYrot = -1;
-      } else { // Mobile
+      } else if (width > 400) { 
+        // Mobile medio / piccoli
         newScale = 2.2;
         newX = 0;
-        newYpos = -1.1;
-        newYrot = -0;
-        bounce = 0; // niente rimbalzo su mobile
+        newYpos = -1.2;
+        newYrot = 0;
+        bounce = 0;
+      } else { 
+        // Mobile molto piccolo
+        newScale = 2;
+        newX = 0;
+        newYpos = -1.5;
+        newYrot = 0;
+        bounce = 0;
       }
 
       group.current.scale.set(newScale, newScale, newScale);
