@@ -9,9 +9,7 @@ const Navbar = () => {
 
   // Detect scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,9 +36,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full h-[80px] flex justify-center items-center px-4 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white/80 backdrop-blur-sm"
-      }`}
+      className={`fixed w-full h-[80px] flex justify-center items-center px-4 z-50 transition-all duration-300
+        ${scrolled
+          ? "bg-white shadow-md"
+          : "bg-white/30 backdrop-blur-md border-b border-orange-100 shadow-sm"
+        }`}
     >
       <div className="max-w-5xl w-full flex justify-between items-center">
         <h1 className="text-2xl md:text-3xl font-bold text-orange-600">Maria Falanga</h1>

@@ -3,10 +3,12 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useAnimations, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
-const AnimatedAvatar = ({ url, scale = 3 }) => {
+
+const AnimatedAvatar = ({ url }) => {
   const group = useRef();
   const { scene, animations } = useGLTF(url);
   const { actions } = useAnimations(animations, group);
+  const { size } = useThree();
 
   // Correzione materiali / texture
   scene.traverse((child) => {
@@ -28,24 +30,51 @@ const AnimatedAvatar = ({ url, scale = 3 }) => {
   }, [animations, actions]);
 
   const tRef = useRef(0);
-  const { size } = useThree();
 
   useFrame(() => {
     if (group.current) {
       tRef.current += 0.03;
-      const aspect = size.width / size.height;
 
-      group.current.position.x = 1.6 * aspect;
-      group.current.position.y = -2.2 + Math.sin(tRef.current) * 0.15; // leggero movimento su/giù
+      const { width } = size;
+
+      // Scala responsiva
+      let newScale = 3;
+      let newX = 0;
+      let newYpos = 0;
+      let newYrot = 0;
+      let bounce = 0.15; // default rimbalzo
+
+      if (width > 1280) { // Desktop grande
+        newScale = 3;
+        newX = 2.8;
+        newYpos = -2.1;
+        newYrot = -1;
+      } else if (width > 768) { // Tablet
+        newScale = 3.5;
+        newX = 3.5;
+        newYpos = -2.6;
+        newYrot = -1;
+      } else { // Mobile
+        newScale = 2.2;
+        newX = 0;
+        newYpos = -1.1;
+        newYrot = -0;
+        bounce = 0; // niente rimbalzo su mobile
+      }
+
+      group.current.scale.set(newScale, newScale, newScale);
+      group.current.position.x = newX;
+      group.current.position.y = newYpos + Math.sin(tRef.current) * bounce;
       group.current.position.z = -1;
-      group.current.rotation.y = -1; // frontale
+      group.current.rotation.y = newYrot;
     }
   });
 
-  return <primitive ref={group} object={scene} scale={scale} />;
+  return <primitive ref={group} object={scene} />;
 };
 
-const Background3D = () => {
+
+const Background3D = React.memo(() => {
   return (
     <Canvas
       className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
@@ -58,6 +87,6 @@ const Background3D = () => {
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
     </Canvas>
   );
-};
+});
 
 export default Background3D;

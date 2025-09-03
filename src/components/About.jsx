@@ -25,11 +25,10 @@ const steps = [
 
 const About = () => {
   return (
-    <div
-      id="about"
-      className="flex flex-col md:flex-row items-start gap-12 md:gap-16 py-12 px-6 md:px-16"
-    >
-     
+      <div
+        id="about"
+        className="scroll-mt-24 flex flex-col md:flex-row items-start gap-12 md:gap-16 py-12 px-6 md:px-16 bg-transparent"
+      >     
       {/* Testo */}
       <motion.div
         className="w-full md:w-1/2"
