@@ -65,14 +65,14 @@ const Projects = () => {
             <p className="text-gray-700 mb-4">
               Sviluppo di questo portfolio come progetto web completo, utilizzando React + Vite + Tailwind, deploy su Vercel.
             </p>
-            <a
+          {/*  <a
               href="https://www.akservice.it"
               className="text-orange-600 font-medium hover:underline transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               Vedi progetto
-            </a>
+            </a> */}
           </motion.div>
         </div>
       </div>
