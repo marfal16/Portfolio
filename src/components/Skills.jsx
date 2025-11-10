@@ -3,35 +3,36 @@ import { motion } from "framer-motion";
 
 const skillsData = [
   {
-    title: "SAP & ABAP",
+    title: "SAP ABAP",
     icon: "🖥️",
     skills: [
-      "Report, ALV, Function Module, Module Pool",
-      "Stampe: SAPScript, Adobe Form",
-      "OData / SOAP / REST",
-      "BADI, User-Exit",
-      "Debugging & ottimizzazione"
+      "Sviluppo ABAP: Report, ALV, Function Module, Module Pool",
+      "Stampe: SAPScript, Smartforms, Adobe Form",
+      "Integrazioni: OData, SOAP, REST (Web Service)",
+      "Estensioni: BADI, User-Exit",
+      "Eclipse ADT: CDS View & RAP (OData exposure, Fiori preview)",
     ],
+
   },
   {
     title: "Web Development",
     icon: "🌐",
     skills: [
-      "React + Vite + Tailwind",
-      "PostgreSQL / pgAdmin / Supabase",
-      "Deploy su Vercel / Render",
-      "Stripe & PayPal integration",
-      "Configurazione domini (Aruba)"
+      "Frontend: React + Vite + Tailwind",
+      "Backend: PostgreSQL / pgAdmin / Supabase",
+      "Deploy & Hosting: Vercel / Render",
+      "Pagamenti: Stripe & PayPal",
+      "Gestione domini: Aruba"
     ],
   },
   {
     title: "Soft Skills",
     icon: "💡",
     skills: [
-      "Comunicazione chiara",
+      "Comunicazione chiara ed efficace",
       "Problem solving",
-      "Teamwork efficace",
-      "Gestione tempo e priorità"
+      "Collaborazione in team",
+      "Gestione del tempo e delle priorità"
     ],
   }
 ];
@@ -43,7 +44,7 @@ const Skills = () => {
       className="scroll-mt-24 relative min-h-screen flex items-center justify-center py-12 px-4 overflow-hidden"
     >
       {/* Sfondo animato */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 animate-[wave_10s_linear_infinite] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/40 via-gray-50 to-gray-100 animate-[wave_10s_linear_infinite] pointer-events-none"></div>
 
       <div className="relative max-w-6xl w-full space-y-12 z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]">

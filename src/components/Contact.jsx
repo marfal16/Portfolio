@@ -1,15 +1,33 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const contacts = [
-  { icon: "📧", label: "Email", value: "mariafalanga00@gmail.com", link: "mailto:mariafalanga00@gmail.com" },
-  { icon: "🔗", label: "LinkedIn", value: "linkedin.com/in/maria-falanga", link: "https://www.linkedin.com/in/maria-falanga-74836918b/" },
-  { icon: "🐙", label: "GitHub", value: "github.com/marfal16", link: "https://github.com/marfal16" },
+  {
+  icon: <FaEnvelope size={20} color="#e8a2a2ff" />,
+  label: "Email",
+  value: "mariafalanga00@gmail.com",
+  link: "mailto:mariafalanga00@gmail.com"
+},
+ {
+  icon: <FaLinkedin size={20} color="#0A66C2" />,
+  label: "LinkedIn",
+  value: "LinkedIn - Maria Falanga",
+  link: "https://www.linkedin.com/in/maria-falanga-74836918b/"
+}
+,
+ {
+  icon: <FaGithub size={20} color="#181717" />,
+  label: "GitHub",
+  value: "github.com/marfal16",
+  link: "https://github.com/marfal16"
+},
 ];
 
 const Contact = () => {
   return (
-    <div id="contact" className="scroll-mt-24 min-h-screen flex flex-col items-center justify-center py-12 px-4">
+    <div id="contact" className="scroll-mt-24 min-h-screen flex flex-col items-center 
+    justify-center py-12 px-4 bg-gradient-to-b from-gray-100 to-blue-950/40">
       <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-8 text-center">
         Contatti
       </h2>

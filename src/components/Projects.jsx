@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div id="projects" className="scroll-mt-24 relative min-h-screen flex items-center justify-center py-12 px-4 overflow-hidden">
+    <div id="projects" className="scroll-mt-24 relative min-h-screen flex items-center justify-center py-12 px-4 overflow-hidden
+    bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto w-full space-y-12 text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">
           Progetti

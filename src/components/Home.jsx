@@ -68,8 +68,8 @@ const Home = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.3 }}
     >
-      Sviluppo soluzioni SAP ABAP per aziende <br />
-      e qualche progetto Web per sperimentare.
+      Sviluppo soluzioni SAP ABAP <br />
+      e sperimento progetti Web.
     </motion.p>
 
     <div className="mt-72 sm:mt-0 relative z-20">
