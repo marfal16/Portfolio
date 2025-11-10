@@ -17,9 +17,9 @@ const Navbar = () => {
   const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contacts", href: "#contact" },
+    { name: "Competenze", href: "#skills" },
+    { name: "Progetti", href: "#projects" },
+    { name: "Contatti", href: "#contact" },
   ];
 
   const hamburgerIcon = (
